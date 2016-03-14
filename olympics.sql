@@ -22,3 +22,7 @@ CREATE TABLE Events (
   silver_id int4 references Athletes(id),
   bronze_id int4 references Athletes(id)
 );
+
+
+
+

@@ -15,7 +15,7 @@ class Event
 
   def self.all()
     sql = "SELECT * FROM events"
-    events = SqlRunner.execute( sql )
+    events = SqlRunner.run_sql( sql )
     return events.map { |event| Event.new(event) }
   end
 
@@ -32,6 +32,24 @@ class Event
       )"
       SqlRunner.run_sql(sql)
       return last_entry()
+  end
+
+ def athletes()
+   sql = "select * from athletes where id = #{@gold_id} OR id = #{@silver_id} OR id = #{@bronze_id}";
+   athletes = SqlRunner.run_sql(sql)
+   athletes.map {|athlete| Athlete.new(athlete)}
+ end
+
+  def nations()
+    sql = "SELECT * FROM nations WHERE id =#{@gold_id} OR id = #{@silver_id} OR id = #{@bronze_id}";
+    nations = SqlRunner.run_sql(sql)
+    nations.map { |nation| Nation.new(nation)}
+  end
+
+  def self.find(id)
+   sql = "SELECT * FROM events WHERE id = #{id}"
+   result = SqlRunner.run_sql(sql)
+   nation = Event.new(result[0])
   end
 
   def last_entry

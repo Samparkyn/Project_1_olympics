@@ -11,10 +11,21 @@ class Athlete
     @name = options['name']
   end
 
+  def events
+    sql = "select * from events where gold_id = #{@id} OR silver_id = #{@id} OR bronze_id = #{@id}";
+    events = SqlRunner.run_sql(sql)
+    events.map {|event| Event.new(event)}
+  end
+
+  def nations()
+    sql = "SELECT * FROM nations WHERE id = #{@nation_id} ORDER BY name"
+    result = SqlRunner.run_sql( sql )
+    Nation.new( result[0] )
+  end
 
  def self.all()
    sql = "SELECT * FROM athletes"
-   athletes = SqlRunner.execute( sql )
+   athletes = SqlRunner.run_sql( sql )
    return athletes.map { |athlete| Athlete.new(athlete) }
  end
 
@@ -27,6 +38,12 @@ class Athlete
     )"
    SqlRunner.run_sql( sql )
    return last_entry()
+ end
+
+ def self.find(id)
+  sql = "SELECT * FROM athletes WHERE id = #{id}"
+  result = SqlRunner.run_sql(sql)
+  nation = Athlete.new(result[0])
  end
 
  def last_entry

@@ -1,0 +1,15 @@
+<h1>Nations</h1>
+<p>Click on a Flag to get that Nations Information</p>
+<ul>
+  <% @nations.each do |nation| %>
+
+  <a href="/nations/<%= nation.id %>"><img src="<%= nation.flag_url %>"><br>
+
+  </a>
+  <% end %>
+</ul>
+<hr>
+
+<button><a href="/results">Back to Results Table></a></button>
+
+

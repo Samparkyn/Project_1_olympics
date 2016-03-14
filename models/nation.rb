@@ -11,11 +11,18 @@ class Nation
     @flag_url = options['flag_url']
   end
 
+  def athletes()
+    sql = "SELECT * FROM athletes WHERE nation_id = #{id}"
+    athletes = SqlRunner.run_sql( sql )
+    athletes.map {|athlete| Athlete.new( athlete )}
+  end
+
   def self.all()
     sql = "SELECT * FROM nations"
-    nations = SqlRunner.execute( sql )
+    nations = SqlRunner.run_sql( sql )
     return nations.map { |nation| Nation.new(nation) }
   end
+
 
   def save()
     sql = "INSERT INTO Nations (
@@ -26,6 +33,12 @@ class Nation
       )"
       SqlRunner.run_sql(sql)
       return last_entry()
+  end
+
+  def self.find(id)
+   sql = "SELECT * FROM nations WHERE id = #{id}"
+   result = SqlRunner.run_sql(sql)
+   nation = Nation.new(result[0])
   end
 
   def last_entry

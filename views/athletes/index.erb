@@ -1,0 +1,13 @@
+<h1>Athletes</h1>
+<p>~Click on an Athlete to see their Stats~</p>
+
+<% @athletes.each do |athlete| %>
+<a href="/athletes/<%= athlete.id %>">
+<%= athlete.name %>
+</a>
+
+<hr>
+
+<% end %>
+
+<button><a href="/results">Back to Results Table></a></button>

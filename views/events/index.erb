@@ -1,0 +1,12 @@
+<h1>Events</h1>
+<p>Click on an Event to see more info about it</p>
+
+<% @events.each do |event| %>
+<a href="/events/<%= event.id %>">
+<%= event.event_name %>
+</a>
+<hr>
+
+<% end %>
+
+<button><a href="/results">Back to Results Table></a></button>
