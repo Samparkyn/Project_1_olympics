@@ -1,6 +1,7 @@
 <h1><%= @event.event_name%></h1>
 
 <% @event.athletes.each do |athlete| %>
-<%= athlete.name %><%= athlete.nation_id %><br>
+<%= athlete.name %> <br><%= athlete.nations.name %><br><br>
+<img src="<%=athlete.nations.flag_url%>" %><br><br>
 <% end %>
 <button><a href="/events">Back to Events></a></button>

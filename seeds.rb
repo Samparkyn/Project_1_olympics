@@ -23,8 +23,6 @@ n6 = nation6.save()
 n7 = nation7.save()
 
 
-
-
 athlete1 = Athlete.new({ 'name' => 'Ben Maher', 'nation_id' => n1.id })
 athlete2 = Athlete.new({ 'name' => 'Steve Guerdat', 'nation_id' => n2.id })
 athlete3 = Athlete.new({ 'name' => 'Reed Kesler', 'nation_id' => n3.id })
@@ -39,8 +37,6 @@ athlete11 = Athlete.new({'name' => 'Andy Murray', 'nation_id' => n1.id })
 athlete12 = Athlete.new({'name' => 'Roger Federer', 'nation_id' => n2.id })
 athlete13 = Athlete.new({'name' => 'Juan Martin Del Potro', 'nation_id' => n6.id })
 athlete14 = Athlete.new({'name' => 'Anky Van Grunsven', 'nation_id' => n7.id})
-
-
 
 a1 = athlete1.save()
 a2 = athlete2.save()

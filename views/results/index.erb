@@ -1,0 +1,26 @@
+<h1>Results Table</h1>
+
+<table>
+
+  <thead>
+    <tr>
+      <th>Nation</th>
+      <th>Golds</th>
+      <th>Silvers</th>
+      <th>Bronzes</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @result.nations.each do |nation| %>
+    <tr>
+      <td><%= nation.name %></td>
+      <td><%= @result.did_win_gold?(nation.id) %>
+      <td><%= @result.did_win_silver?(nation.id) %></td>
+      <td><%= @result.did_win_bronze?(nation.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>
+

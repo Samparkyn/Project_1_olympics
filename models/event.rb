@@ -46,6 +46,12 @@ class Event
     nations.map { |nation| Nation.new(nation)}
   end
 
+  # def athletes_nation()
+  #   sql = "SELECT * FROM athletes WHERE id =#{@nation_id} ORDER BY name";
+  #   athletes_nation = SqlRunner.run_sql(sql)
+  #   nations.map { |nation| Nation.new(nation)}
+  # end
+
   def self.find(id)
    sql = "SELECT * FROM events WHERE id = #{id}"
    result = SqlRunner.run_sql(sql)
@@ -71,6 +77,45 @@ class Event
   def self.delete_all
     sql = "DELETE FROM events"
     SqlRunner.run_sql(sql)
+  end
+
+  def gold_athlete()
+    sql = "SELECT * FROM athletes WHERE id = #{@gold_id}"
+    result = SqlRunner.run_sql(sql)
+    gold_athlete = Athlete.new(result[0])
+    return gold_athlete.nations.id
+  end
+
+  def silver_athlete()
+    sql = "SELECT * FROM athletes WHERE id = #{@silver_id}"
+    result = SqlRunner.run_sql(sql)
+    silver_athlete = Athlete.new(result[0])
+    return silver_athlete.nations.id
+  end
+
+  def bronze_athlete()
+    sql = "SELECT * FROM athletes WHERE id = #{@bronze_id}"
+    result = SqlRunner.run_sql(sql)
+    bronze_athlete = Athlete.new(result[0])
+    return bronze_athlete.nations.id
+  end
+
+  def nation_gold?(nation_id)
+    if (nation_id == gold_athlete)
+      return true
+    end
+  end
+
+  def nation_silver?(nation_id)
+    if (nation_id == silver_athlete)
+      return true
+    end
+  end
+
+  def nation_bronze?(nation_id)
+    if (nation_id == bronze_athlete)
+      return true
+    end
   end
 
 end

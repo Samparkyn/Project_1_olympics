@@ -11,5 +11,20 @@ img {
   height: 200px;
 }
 
+table {
+  margin: auto;
+  border: solid;
+}
+
+table, th, td {
+  background-color: deepskyblue;
+}
+
+th,td{
+  padding: 5px;
+}
+
+
+
 
 

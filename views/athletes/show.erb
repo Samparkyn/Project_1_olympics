@@ -3,7 +3,7 @@
 <img src="<%= @nations.flag_url %>">
 <h3>Events : </h3>
 <% @athlete.events.each do |event| %>
-<%= event.event_name %>
+<%= event.event_name %> <br><br>
 <% end %>
 
 <button><a href="/athletes">Back to Athletes></a></button>
