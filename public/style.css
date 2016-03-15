@@ -1,5 +1,36 @@
 body {
   text-align: center;
+  background-size: cover;
+}
+
+.event {
+  background-color: deepskyblue;
+  color: white;
+  border: solid 1px black;
+  border-radius: 25px;
+}
+
+.nation_link a {
+  text-decoration: none;
+  color: black;
+}
+
+.event a {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.home {
+  background-color: black;
+  border: solid 1px black;
+  border-radius: 25px;
+}
+
+.home a {
+  color: white;
+  text-decoration: none;
 }
 
 ul {
@@ -17,11 +48,59 @@ table {
 }
 
 table, th, td {
-  background-color: deepskyblue;
+  background-color: grey;
 }
 
-th,td{
+.gold {
   padding: 5px;
+  border: solid 2px;
+  background-color: gold;
+}
+
+.gold_medal {
+  height: 50px;
+  width: 50px;
+  background-image:
+}
+
+.silver_medal {
+  height: 50px;
+  width: 50px;
+}
+
+.bronze_medal {
+  height: 50px;
+  width: 50px;
+}
+
+.silver {
+  padding: 5px;
+  border: solid 2px;
+  background-color: silver;
+}
+
+.bronze {
+  padding: 5px;
+  border: solid 2px;
+  background-color: #CD7F32;
+}
+
+.table_flags {
+  height: 50px;
+  width: 50px;
+  padding-left: 50px;
+}
+
+.athlete_name {
+  font-size: 20px;
+}
+
+.nation_athletes{
+  background-color: deepskyblue;
+  width: 300px;
+  margin: auto;
+  border: solid 1px black;
+  border-radius: 25px;
 }
 
 

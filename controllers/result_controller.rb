@@ -6,9 +6,6 @@ require_relative('../models/result')
 get '/result' do
   options = {'nations' => Nation.all, 'athletes' => Athlete.all, 'events' => Event.all}
   @result = Result.new(options)
+  @page_background = '../images/rio.jpg'
   erb :"results/index"
-end
-
-get '/result' do
-  "Hello World"
 end

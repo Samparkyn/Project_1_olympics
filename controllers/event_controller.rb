@@ -4,6 +4,7 @@ require_relative('../models/event')
 
 get '/events' do
   @events = Event.all()
+  @page_background = '../images/events.jpg'
   erb :"events/index"
 end
 

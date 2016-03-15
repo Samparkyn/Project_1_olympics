@@ -1,14 +1,17 @@
+<div class="nation_athletes">
 <h1><%= @nation.name%></h1>
 <img src="<%= @nation.flag_url %>"><br>
 
 <h2>Nations Athletes : </h2>
 <ul>
 <% @nation.athletes.each do |athlete| %>
-  <li><%= athlete.name %></li>
+  <li class="athlete_name"><%= athlete.name %></li>
 <% end %>
 </ul>
 
-<button><a href="/nations">Back to Nations></a></button>
+<button><a href="/nations">Back to Nations</a></button><br>
+<button><a href="/result">Back to Medals Table</a></button>
+</div>
 
 
 

@@ -2,11 +2,11 @@
 <p>Click on an Event to see more info about it</p>
 
 <% @events.each do |event| %>
-<a href="/events/<%= event.id %>">
-<%= event.event_name %>
+<button class="event"><a href="/events/<%= event.id %>">
+<%= event.event_name %></a></button>
 </a>
 <hr>
 
 <% end %>
 
-<button><a href="/results">Back to Results Table></a></button>
+<button class="home"><a href="/home">Back to HomePage</a></button>

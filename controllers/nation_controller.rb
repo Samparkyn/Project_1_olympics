@@ -3,6 +3,7 @@ require_relative('../models/athlete')
 
 get '/nations' do
   @nations = Nation.all()
+  @page_background = '../images/olympic_logo.png'
   erb :"nations/index"
 end
 
@@ -19,6 +20,7 @@ end
 get '/nations/:id' do
   @nation = Nation.find(params[:id])
   @athletes = @nation.athletes()
+  @page_background = '../images/rio-background.jpg'
   erb :"nations/show"
 end
 
