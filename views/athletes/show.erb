@@ -1,9 +1,12 @@
-<h1>Athletes Name : <%= @athlete.name%></h1>
-<h2>Athletes Nation : <%= @nations.name %></h2>
-<img src="<%= @nations.flag_url %>">
-<h3>Events : </h3>
-<% @athlete.events.each do |event| %>
-<%= event.event_name %> <br><br>
-<% end %>
+<div class="athlete_container">
+  <h1>Athletes Name:<br> <%= @athlete.name%></h1>
+  <h2>Athletes Nation:<br> <%= @nations.name %></h2>
+  <img src="<%= @nations.flag_url %>">
+  <h3>Events : </h3>
+  <% @athlete.events.each do |event| %>
+  <%= event.event_name %> <br><br>
+  <% end %>
+</div>
 
-<button><a href="/athletes">Back to Athletes></a></button>
+<br>
+<button class="home"><a href="/athletes">Back to Athletes</a></button>

@@ -3,6 +3,29 @@ body {
   background-size: cover;
 }
 
+.nations_container li {
+  padding: 0.5em;
+  width: 25%;
+  display: inline-block;
+}
+
+.nation_container{
+  background-color: deepskyblue;
+  width: 300px;
+  margin: auto;
+  border: solid 1px black;
+  border-radius: 25px;
+}
+
+.athlete_container{
+  background-color: black;
+  color: white;
+  width: 300px;
+  margin: auto;
+  border: solid 1px black;
+  border-radius: 25px;
+}
+
 .event {
   background-color: deepskyblue;
   color: white;
@@ -10,9 +33,23 @@ body {
   border-radius: 25px;
 }
 
+.athlete {
+  background-color: gold;
+  color: white;
+  border: solid 1px black;
+  border-radius: 25px;
+}
+
+.athlete a {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .nation_link a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .event a {
@@ -42,6 +79,7 @@ img {
   height: 200px;
 }
 
+/* Medal Table */
 table {
   margin: auto;
   border: solid;
@@ -51,57 +89,52 @@ table, th, td {
   background-color: grey;
 }
 
+.medal {
+  height: 50px;
+  width: 50px;
+}
+
 .gold {
-  padding: 5px;
   border: solid 2px;
   background-color: gold;
 }
 
-.gold_medal {
-  height: 50px;
-  width: 50px;
-  background-image:
-}
-
-.silver_medal {
-  height: 50px;
-  width: 50px;
-}
-
-.bronze_medal {
-  height: 50px;
-  width: 50px;
-}
-
 .silver {
-  padding: 5px;
   border: solid 2px;
   background-color: silver;
 }
 
 .bronze {
-  padding: 5px;
   border: solid 2px;
   background-color: #CD7F32;
 }
 
+.points {
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
 .table_flags {
   height: 50px;
-  width: 50px;
-  padding-left: 50px;
+  width: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+
+.table_background {
+  background-color: black;
+  color: white;
 }
 
 .athlete_name {
   font-size: 20px;
 }
 
-.nation_athletes{
-  background-color: deepskyblue;
-  width: 300px;
-  margin: auto;
-  border: solid 1px black;
-  border-radius: 25px;
-}
+
 
 
 

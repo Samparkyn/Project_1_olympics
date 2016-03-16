@@ -20,5 +20,6 @@ end
 
 get '/events/:id' do
   @event = Event.find(params[:id])
+  @page_background = '../images/rings-flame.jpg'
   erb :"events/show"
 end

@@ -1,7 +1,38 @@
-<h1><%= @event.event_name%></h1>
 
-<% @event.athletes.each do |athlete| %>
-<%= athlete.name %> <br><%= athlete.nations.name %><br><br>
-<img src="<%=athlete.nations.flag_url%>" %><br><br>
-<% end %>
-<button><a href="/events">Back to Events></a></button>
+<h1><%= @event.event_name%> Medal Table</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th class="table_background">Medal</th>
+      <th class="table_background">Athlete</th>
+      <th class="table_background">Nation</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td class="table_background"><img src="../images/gold.jpg" class="medal"></td>
+      <td class="gold"><%= @event.gold_athlete_name %></td>
+      <td><img class="table_flags" src="<%= @event.gold_athlete_flag %>"></td>
+    </tr>
+    <tr>
+      <td class="table_background"><img src="../images/silver.jpg" class="medal"></td>
+      <td class="silver"><%= @event.silver_athlete_name %></td>
+      <td><img class="table_flags" src="<%= @event.silver_athlete_flag %>"></td>
+    </tr>
+    <tr>
+      <td class="table_background"><img src="../images/bronze.jpg" class="medal"></td>
+      <td class="bronze"><%= @event.bronze_athlete_name %></td>
+      <td><img class="table_flags" src="<%= @event.bronze_athlete_flag %>"></td>
+    </tr>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+<button class="home"><a href="/events">Back to Events Page</a></button>
+
+

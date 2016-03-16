@@ -46,12 +46,6 @@ class Event
     nations.map { |nation| Nation.new(nation)}
   end
 
-  # def athletes_nation()
-  #   sql = "SELECT * FROM athletes WHERE id =#{@nation_id} ORDER BY name";
-  #   athletes_nation = SqlRunner.run_sql(sql)
-  #   nations.map { |nation| Nation.new(nation)}
-  # end
-
   def self.find(id)
    sql = "SELECT * FROM events WHERE id = #{id}"
    result = SqlRunner.run_sql(sql)
@@ -79,7 +73,7 @@ class Event
     SqlRunner.run_sql(sql)
   end
 
-  def gold_athlete()
+  def gold_athlete() #These methods return the nation id of the athlete who won, so I could calculate the nations total medals won.
     sql = "SELECT * FROM athletes WHERE id = #{@gold_id}"
     result = SqlRunner.run_sql(sql)
     gold_athlete = Athlete.new(result[0])
@@ -100,6 +94,27 @@ class Event
     return bronze_athlete.nations.id
   end
 
+  def gold_athlete_name() #These methods are the same as above, although simply return the name of the athlete who won each medal. Which I wanted for the individual event medal tables.
+    sql = "SELECT * FROM athletes WHERE id = #{@gold_id}"
+    result = SqlRunner.run_sql(sql)
+    gold_athlete_name = Athlete.new(result[0])
+    return gold_athlete_name.name
+  end
+
+  def silver_athlete_name()
+    sql = "SELECT * FROM athletes WHERE id = #{@silver_id}"
+    result = SqlRunner.run_sql(sql)
+    silver_athlete_name = Athlete.new(result[0])
+    return silver_athlete_name.name
+  end
+
+  def bronze_athlete_name()
+    sql = "SELECT * FROM athletes WHERE id = #{@bronze_id}"
+    result = SqlRunner.run_sql(sql)
+    bronze_athlete_name = Athlete.new(result[0])
+    return bronze_athlete_name.name
+  end
+
   def nation_gold?(nation_id)
     if (nation_id == gold_athlete)
       return true
@@ -116,6 +131,27 @@ class Event
     if (nation_id == bronze_athlete)
       return true
     end
+  end
+
+  def gold_athlete_flag()
+    sql = "SELECT * FROM athletes WHERE id = #{@gold_id}"
+    result = SqlRunner.run_sql(sql)
+    gold_athlete = Athlete.new(result[0])
+    return gold_athlete.nations.flag_url
+  end
+
+  def silver_athlete_flag()
+    sql = "SELECT * FROM athletes WHERE id = #{@silver_id}"
+    result = SqlRunner.run_sql(sql)
+    silver_athlete = Athlete.new(result[0])
+    return silver_athlete.nations.flag_url
+  end
+
+  def bronze_athlete_flag()
+    sql = "SELECT * FROM athletes WHERE id = #{@bronze_id}"
+    result = SqlRunner.run_sql(sql)
+    bronze_athlete = Athlete.new(result[0])
+    return bronze_athlete.nations.flag_url
   end
 
 end

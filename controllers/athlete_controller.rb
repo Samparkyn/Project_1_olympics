@@ -5,6 +5,7 @@ require_relative('../models/event')
 get '/athletes' do
   #INDEX
   @athletes = Athlete.all()
+  @page_background = '../images/rings-background.jpg'
   erb :"athletes/index"
 end
 
@@ -21,5 +22,6 @@ end
 get '/athletes/:id' do
   @athlete = Athlete.find(params[:id])
   @nations = @athlete.nations()
+  @page_background = '../images/rio-logo-background.jpg'
   erb :"athletes/show"
 end

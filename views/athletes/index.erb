@@ -1,13 +1,16 @@
 <h1>Athletes</h1>
-<p>~Click on an Athlete to see their Stats~</p>
+<p>Click on an Athlete to see their Stats</p>
+<button class="home"><a href="/home">Back to HomePage</a></button>
+
+<hr>
 
 <% @athletes.each do |athlete| %>
-<a href="/athletes/<%= athlete.id %>">
-<%= athlete.name %>
+<button class="athlete"><a href="/athletes/<%= athlete.id %>">
+<%= athlete.name %></a></button>
 </a>
 
 <hr>
 
 <% end %>
 
-<button class="home"><a href="/home">Back to HomePage</a></button>
+

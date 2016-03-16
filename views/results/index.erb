@@ -4,22 +4,23 @@
 
   <thead>
     <tr>
-      <th>Nation</th>
-      <th></th>
-      <th><img src="../images/gold.jpg" class="gold_medal"></th>
-      <th><img src="../images/silver.jpg" class="silver_medal"></th>
-      <th><img src="../images/bronze.jpg" class="bronze_medal"></th>
-      <th>Points</th>
+      <th class="table_background">Nation</th>
+      <th class="table_background"></th>
+      <th class="table_background"><img src="../images/gold.jpg" class="medal"></th>
+      <th class="table_background"><img src="../images/silver.jpg" class="medal"></th>
+      <th class="table_background"><img src="../images/bronze.jpg" class="medal"></th>
+      <th class="table_background">Points</th>
     </tr>
   </thead>
   <tbody>
   <% @result.nations.each do |nation| %>
     <tr>
-      <td class="nation_link"><a href="/nations/<%= nation.id %>"><%= nation.name %></td>
-      <td><img class="table_flags" src="<%= nation.flag_url %>"></td>
+      <td class="table_background nation_link"><a href="/nations/<%= nation.id %>"><%= nation.name %></td>
+      <td class="table_background"><img class="table_flags" src="<%= nation.flag_url %>"></td>
       <td class="gold"><%= @result.did_win_gold?(nation.id) %></td>
       <td class="silver"><%= @result.did_win_silver?(nation.id) %></td>
       <td class="bronze"><%= @result.did_win_bronze?(nation.id) %></td>
+      <td class="points"><%= @result.total_points(nation.id) %></td>
     </tr>
     <% end %>
   </tbody>
