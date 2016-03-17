@@ -34,11 +34,11 @@ class Event
       return last_entry()
   end
 
- def athletes()
+  def athletes()
    sql = "select * from athletes where id = #{@gold_id} OR id = #{@silver_id} OR id = #{@bronze_id}";
    athletes = SqlRunner.run_sql(sql)
    athletes.map {|athlete| Athlete.new(athlete)}
- end
+  end
 
   def nations()
     sql = "SELECT * FROM nations WHERE id =#{@gold_id} OR id = #{@silver_id} OR id = #{@bronze_id}";
@@ -153,5 +153,6 @@ class Event
     bronze_athlete = Athlete.new(result[0])
     return bronze_athlete.nations.flag_url
   end
+
 
 end

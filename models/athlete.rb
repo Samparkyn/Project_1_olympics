@@ -3,12 +3,14 @@ require_relative('../sql_runner')
 
 class Athlete
 
-  attr_reader :id, :nation_id, :name
+  attr_reader :id, :nation_id, :name, :athlete_stats, :athlete_image
 
   def initialize(options)
     @id = options['id']
     @nation_id = options['nation_id']
     @name = options['name']
+    @athlete_stats = options['athlete_stats']
+    @athlete_image = options['athlete_image']
   end
 
   def events
@@ -32,9 +34,13 @@ class Athlete
  def save()
    sql = "INSERT INTO Athletes (
     name,
-    nation_id) VALUES (
+    nation_id,
+    athlete_stats,
+    athlete_image) VALUES (
     '#{ @name }',
-    '#{@nation_id}'
+    '#{@nation_id}',
+    '#{@athlete_stats}',
+    '#{@athlete_image}'
     )"
    SqlRunner.run_sql( sql )
    return last_entry()

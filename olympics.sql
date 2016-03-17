@@ -12,7 +12,9 @@ CREATE TABLE Nations (
 CREATE TABLE Athletes (
   id serial4 PRIMARY KEY,
   nation_id int4 references Nations(id),
-  name varchar(255)
+  name varchar(255),
+  athlete_stats varchar(255),
+  athlete_image varchar(255)
 );
 
 CREATE TABLE Events (
